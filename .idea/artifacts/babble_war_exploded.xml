@@ -1,0 +1,28 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="babble:war exploded">
+    <output-path>$PROJECT_DIR$/target/babble</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="babble" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-server:9.0.6.v20130930" />
+          <element id="library" level="project" name="Maven: org.eclipse.jetty.orbit:javax.servlet:3.0.0.v201112011016" />
+          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-http:9.0.6.v20130930" />
+          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-util:9.0.6.v20130930" />
+          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-io:9.0.6.v20130930" />
+          <element id="library" level="project" name="Maven: org.freemarker:freemarker:2.3.19" />
+          <element id="library" level="project" name="Maven: com.ibm.db2:jdbc:1.0" />
+          <element id="library" level="project" name="Maven: commons-net:commons-net:3.1" />
+          <element id="library" level="project" name="Maven: commons-io:commons-io:2.4" />
+          <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.6" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/babble/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="babble/web/Web" />
+    </root>
+  </artifact>
+</component>
