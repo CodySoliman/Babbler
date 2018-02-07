@@ -169,17 +169,20 @@ public class MessagesServlet extends HttpServlet {
 		Connection con = null;
 		try {
 			con = DBUtil.getExternalConnection("babble");
-			try (PreparedStatement ps = con.prepareStatement("SELECT * FROM dbp51.Follows WHERE (follower = ? AND followee = ?) AND (follower = ? AND followee = ?)")) {
+			try (PreparedStatement ps = con.prepareStatement("SELECT * FROM dbp51.Follows WHERE (follower = ? AND followee = ?) OR (follower = ? AND followee = ?)")) {
 				ps.setString(1, loggedInUserName);
 				ps.setString(2, userId);
 				ps.setString(3, userId);
 				ps.setString(4, loggedInUserName);
 				try (ResultSet rs = ps.executeQuery()) {
-					if(rs.next())
+					int i=0;
+					while(rs.next() && i<3)
 					{
-						return true;
-					} else
-						return false;					
+						i++;
+						if(i==2)
+							return true;							
+					}
+					return false;
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
