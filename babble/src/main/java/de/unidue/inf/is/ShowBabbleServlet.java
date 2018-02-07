@@ -40,7 +40,7 @@ public class ShowBabbleServlet extends HttpServlet {
 			babbleId = Integer.parseInt(request.getParameter("id"));
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("No id this time :) Id:" + babbleId);
+			e.printStackTrace();
 		}
 		try {
 			con = DBUtil.getExternalConnection("babble");
@@ -59,9 +59,7 @@ public class ShowBabbleServlet extends HttpServlet {
 					ps.setInt(1, babbleId);
 					ps.setString(2, request.getSession().getAttribute("loggedInUserName").toString());
 					try (ResultSet rs = ps.executeQuery()) {
-						System.out.println(babbleId + "      " + request.getSession().getAttribute("loggedInUserName").toString());
 						if (rs.next()) {
-							System.out.println("action: " + action + " type from DB: "+ rs.getString("type")+" Comparision result: "+ rs.getString("type").equals(action));
 							if(rs.getString("type").equals(action))
 							{
 								try (PreparedStatement ps_deleteLike = con.prepareStatement("DELETE FROM dbp51.LikesBabble WHERE type = ? AND babble = ? AND username = ?")) {
@@ -178,13 +176,13 @@ public class ShowBabbleServlet extends HttpServlet {
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("No action this time :)");
+			e.printStackTrace();
 		}
 
 		try (PreparedStatement ps = con.prepareStatement("SELECT * FROM dbp51.LikesBabble WHERE babble = ? AND username = ?")) {
 			ps.setInt(1, babbleId);
 			ps.setString(2, request.getSession().getAttribute("loggedInUserName").toString());
-			
+
 			try (ResultSet rs = ps.executeQuery()) {
 				if(!rs.next())
 					request.setAttribute("liked", "no");
@@ -201,7 +199,7 @@ public class ShowBabbleServlet extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		try (PreparedStatement ps = con.prepareStatement("SELECT * FROM dbp51.ReBabble WHERE babble = ? AND username = ?")) {
 			ps.setInt(1, babbleId);
 			ps.setString(2, request.getSession().getAttribute("loggedInUserName").toString());

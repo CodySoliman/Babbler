@@ -1,6 +1,6 @@
 <#include "header.ftl">
 
-<h2 id="page-head">Let the world know about your new Babble!</h2>
+<h2 id="page-head">Babbl mal und gib einen Bonus-Punkt ツ </h2>
 <form method="POST">
     <fieldset class="noborder">
         <div>

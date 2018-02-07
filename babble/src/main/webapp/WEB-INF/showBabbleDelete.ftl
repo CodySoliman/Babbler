@@ -3,7 +3,7 @@
 <#if submitMessage??>
 <table id="messageBox">
          <tr>
-            <td id="submitMessage">${submitMessage}</td>
+            <td id="submitMessage" class="success">${submitMessage}</td>
          </tr>
       </table>
      </#if>

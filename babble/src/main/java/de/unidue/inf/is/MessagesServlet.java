@@ -41,7 +41,6 @@ public class MessagesServlet extends HttpServlet {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 //			request.setAttribute("pagetitle", "- Not Logged In");
-			System.out.println("No Id");
 		}
 		request.setAttribute("pagetitle", "- Conversation with @" + userId);
 		ArrayList<Babble> babbles;
@@ -111,7 +110,7 @@ public class MessagesServlet extends HttpServlet {
 		}
 		} else {
 			request.setAttribute("success", false);
-			request.setAttribute("message", "You are not allowed to send messages to @" + userId+"! \nYour're not friends (following each other).");
+			request.setAttribute("message", "You are not allowed to send messages to @" + userId+"! \nYour're not friends (not following each other).");
 		}
 		
 		

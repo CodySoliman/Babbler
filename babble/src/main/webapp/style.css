@@ -81,6 +81,7 @@ height: 200px;
 #userInfo{
     float: left;
     height: 160px;
+    max-width: 80%;
 }
 
 #profilePic_wrapper{
@@ -116,7 +117,7 @@ height: 200px;
 #babble-time, #babble-count {
 text-align: left;
     float: right;
-    width: 26%;
+    width: 25%;
     display: block;
 }
 

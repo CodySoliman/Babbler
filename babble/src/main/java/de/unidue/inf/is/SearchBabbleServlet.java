@@ -78,6 +78,7 @@ public class SearchBabbleServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		request.setAttribute("searchText", request.getParameter("searchText"));
+		BabbleAssists.sortBabbles(babbles);
 		request.setAttribute("resultBabbles", babbles);
 		try {
 			request.getRequestDispatcher("/searchBabble.ftl").forward(

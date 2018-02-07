@@ -1,6 +1,6 @@
 <#include "header.ftl">
 
-<h1 id="head-title">Top 5 most liked Babbles</h1>
+<h2 id="head-title">Top 5 most liked Babbles</h2>
 
 <#if resultBabbles??>
       <#list resultBabbles as babble>
