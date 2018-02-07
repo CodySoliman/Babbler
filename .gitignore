@@ -1,2 +1,7 @@
+<<<<<<< Upstream, based on origin/master
 babble/
 !babble/src
+=======
+/babble/
+!/babble/src
+>>>>>>> 8aef419 Initalization 1
